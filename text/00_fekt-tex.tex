@@ -143,16 +143,10 @@
     Pokud by byl RZ
 \begin{align*}
      A_0 = D*\frac{\theta}{T} \\
-        A_0 = -3 *\frac{2*0.5-1*0.5}{6*0.5} \\
+        A_0 = -3 *\frac{0.5}{3} \\
         A_0 = -\frac{1}{2}V \\
 \end{align*}
 
-Pokud by byl NRZ
-\begin{align*}
-     A_0 = D*\frac{\theta}{T} \\
-        A_0 = -3 *\frac{2*0.5-1*0.5}{3*0.5} \\
-        A_0 = -1V \\
-\end{align*}
 \break
 
 \item \textbf{Hlas v pasmu 300 Hz az 3000 Hz v SSB, celková šířka pasma?}
@@ -365,9 +359,9 @@ dat rychlostí 9,6 kbit/s
     R=1/T_b \\
     \Delta=R/4=2.6kHz
 \end{align*}
-    \item Bipolárním signálem RZ o napěťových úrovních +5 V a –5 V je přenášena periodická datová 
+    \item \textbf{Bipolárním signálem RZ o napěťových úrovních +5 V a –5 V je přenášena periodická datová 
 posloupnost …110110110… Doba trvání impulzu je poloviční oproti době trvání bitu, která je 
-Tb = 250 $\mu$s. Určete stejnosměrnou složku signálu a modulační rychlost
+Tb = 250 $\mu$s. Určete stejnosměrnou složku signálu a modulační rychlost}
 \begin{align*}
     A_0=5*\frac{2*\theta-\theta}{T}\\
      A_0=\frac{5}{6}\\
@@ -376,12 +370,296 @@ Tb = 250 $\mu$s. Určete stejnosměrnou složku signálu a modulační rychlost
       M=1/\theta=\frac{1}{\theta}=1/125*10^-6\\
       M=8kBd
 \end{align*}
-    \item 
-    \item 
-    \item 
-    \item 
-    \item 
-    \item 
-    \item 
+    \item \textbf{Jaká bude šířka pásma B amplitudově modulovaného signálu s jedním postranním pásmem a 
+nosnou (SSB), jestliže dolní mezní kmitočet modulačního signálu fd = 10 Hz, horní mezní 
+kmitočet modulačního signálu fh = 15 kHz a kmitočet nosné fc = 100 kHz.}
 
+Pro SSB platí $B=Fmax$ tedy B=15kHz
+
+    \item \textbf{Jaká je modulační rychlost systému 32QAM (tj. modulační rychlost na výstupu modulátoru), 
+jestliže na vstup modulátoru přivádíme binární NRZ modulační signál s dobou trvání 
+signálového prvku 50 $\mu$s? }
+\begin{align*}
+    M=1/T_s\\
+    1/50*10^{-6} \\
+    M=20 kBd
+\end{align*}
+\item \textbf{Jaká musí být minimální výška kvantovacího kroku modulace delta (DM), aby nedošlo ke 
+zkreslení přenášeného signálu přetížením kodéru, jestliže chceme touto modulací přenášet 
+signál s maximální strmostí 300 V/s přenosovým kanálem s přenosovou kapacitou 12 kbit/s?}
+\begin{align*}
+    A*\Omega=300V/s \\
+    R=12*10^3 \\
+    A*\Omega=\frac{\Delta}{T_s}\\
+    R=\frac{1}{T_s} \\
+    T_s=\frac{1}{R} \\
+    T_s=\frac{1}{12*10^3} \\
+    300=\frac{\Delta}{\frac{1}{12*10^3}}\\
+    \Delta=\frac{300}{12*10^3}\\
+    \Delta=0.025 V
+\end{align*}
+\item \textbf{Uvažujte osmibitovou PCM, maximální kmitočet vstupního signálu je Fmax = 3,4 kHz, 
+frekvence vzorkování fv = 48 kHz, rozsah vstupního signálu je od –5 V do +5 V. Kolik bitů musí 
+mít DPCM, aby výsledné zkreslení kvantovacím šumem bylo přinejmenším stejné jako 
+v případě PCM?}
+
+\begin{align*}
+\Delta_{max}=2*\mathrm{VOLTY}sin(2\pi*F_{max}*T_s) \\
+T_s=1/48=2.5*10^{-6} \\
+    \Delta_{max}=2*5sin(2\pi*3.4*10^3*2.5*10^{-6})=2.33\\
+      \Delta_{PCM}=\frac{FS}{2^n}=\frac{10}{2^8}=0.039 \\
+    \Delta_{PCM}=\Delta_{DPCM} \\
+    0.039=\frac{2\Delta_{max}}{2^n}\\
+   N=log_2(\frac{4.66}{0.039})=6.9\Tilde{=}7\mathrm{bitu}
+\end{align*}
+
+\end{enumerate}
+
+\section{Schémata modulátorů, klíčování etc. - basic vzorce}
+\begin{enumerate}
+    \item \textbf{RANDOM USEFUL VZORCE}
+    \begin{enumerate}
+        \item Stejnosměrná složka
+        \begin{enumerate}
+            \item Unipolar$$A_0=D*\frac{\theta}{T}$$
+            \item Bipolar$$A_0=D\frac{p*\theta-n*\theta}{T}$$\footnote{$\theta$= doba trvání jednoho impulzu - např u bipolar 0.5, většinou v zadání. T= perioda- po kolika bitech se posloupnost opakuje}
+        \end{enumerate}
+        \item Chybovost $P_e=F_0(\frac{D_0-D_1}{2\sigma})$
+        \item Amplituda k-te harmonické složky$$2A_0sinc|\frac{\theta}{2}*\frac{2\pi}{T_0}|$$
+    \end{enumerate}
+    \item \textbf{AM }
+        \begin{enumerate}
+            \item Modulovaný signál:
+            $$S_c[1+m*f(t)]cos(\omega_ct
+            $$, kde f(t) je normovaný modulační signál, m je hloubka modulace
+            \item $m=\frac{\Delta S}{S_c}$
+            \item $B=2\Omega$
+            \item $S_s=1/2\Delta S$
+            \item $P_{AM}=P_c+2P_s$
+            \item $P_c=\frac{S_c^2}{2R}$
+            \item $P_s=\frac{m^2*S_c^2}{8R}$
+            \item SSB - B= $\Omega_{max}$ a $P=P_c+P_s$
+            \item SSB-PSC B= $\Omega_{max}$ a $P=a^2P_c+P_s$
+            \item SSB-SC B=$\Omega_{max}-\Omega_min$ a $P=P_s$
+            \item DSB-SC B=B=$2\Omega_max$ a $P=2P_s$
+        \end{enumerate}
+    \item FM
+    \begin{enumerate}
+        \item Modulovaný signál: $$
+        S_ccos[\phi (t)+\varphi_c]
+        $$,kde $\phi (t)$ je okamžitá fáze.
+        \item $B=2*(\Delta f + F_{max}$
+        \item $\frac{\Delta f}{F}$
+    \end{enumerate}
+    \item PM
+    \begin{enumerate}
+        \item  Modulovaný signál: $$
+    s(t)=S_ccos[\omega_ct+\varphi_c+\Delta\varpi f(t)]$$, kde f(t) je normovaný modulační signál
+        \item 
+    \end{enumerate}
+\textbf{    \item ASK}
+    \begin{enumerate}
+         \item Lze jej popsat jako:
+    $$s(t)=s_c(t)*g(t)$$,kde $s_c$ je harmonická nosná vlna a $g(t)$ je obdélníkový klíčovací signál = 0-1
+    \item\begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.5]{images/ask.png}
+        \caption{ASK}
+        \label{fig:enter-label}
+    \end{figure}
+    \item $B_{min}=2F$
+    \item $R=M$
+    \item $M=\frac{1}{2T_s}$
+    \item Kmitočet klíčovacího signálu: $F=1/2T_s$.\footnote{$T_s$=doba trv ání symbolu}
+
+    \end{enumerate}
+    \item \textbf{FSK}
+    \begin{enumerate}
+        \item 1 a 0 reprezentovány harmonickým signálem s kmitočty $f_1$ a $f_0$
+            \item $B_{min}=|f_0-f_1|+2F$
+        \item $R=M$
+    \end{enumerate}
+    \item \textbf{BPSK}
+    \begin{enumerate}
+        \item Lze jej popsat jako $$s(t)=s_c(t)*g(t)$$, kde $s_c$ je harmonicky signal a $g(t)$ je obdelníkový modulační signál 1 a -1
+        \item \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.5]{images/BPSK.png}
+            \caption{BPSK}
+            \label{fig:enter-label}
+        \end{figure}
+        \item $F_s=\frac{1}{2T_s}$
+        \item $M=\frac{1}{T_s}$
+        \item $B_{min}=2F=M$
+        \item $R=M=B$ asi?
+    \end{enumerate}
+   \item \textbf{MSK}
+   \begin{enumerate}
+       \item Zvláštní případ FSK, neobsahuje fázové skoky.
+       \item Kmitočtový zdvih $\Delta f= R/4=1/4T$\footnote{T=doba trvani bitu}
+       \item hodnota $\Delta f$ je nejmenší hodnota kde lze docílit koherentní demodulace
+       \item \begin{figure}[h!]
+           \centering
+           \includegraphics[scale=0.5]{images/MSK.png}
+           \caption{MSK}
+           \label{fig:enter-label}
+       \end{figure}
+   \end{enumerate}
+   \item \textbf{FFSK}
+   \begin{enumerate}
+       \item Zvláštní případ FSK, nemá fázové skoky
+       \item Popsán rovnicí $$s(t)=S_ccos(\omega_ct+d_k\omega_rt+\varphi_k$$, kde $\varphi_k v intervalu 0 rad - \pi rad$
+        \item Kmitočtový zdvih $\Delta f= R/4=1/4T$
+       \item \begin{figure}[h!]
+           \centering
+           \includegraphics[scale=0.5]{images/FFSK.png}
+           \caption{FFSK}
+           \label{fig:enter-label}
+       \end{figure}
+   \end{enumerate}
+    \item \textbf{GMSK}
+    \begin{enumerate}
+        \item varianta FSK, používá gaussovský tvarovací filtr
+        \item $B=\frac{BT}{T}$
+        \item $T=\frac{1}{R}$
+        \item $\Delta f=\frac{1}{4T}$
+        \item Spek. účinnost $\frac{R}{B_{ch}}$
+        \item \begin{figure}[h!]
+            \centering
+         \includegraphics[scale=0.5]{images/GMSK.png}
+            \caption{GMSK}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{enumerate}
+    \item \textbf{QPSK}
+    \begin{enumerate}
+        \item \begin{figure}[h!]
+            \centering
+            \includegraphics{images/QPSK.png}
+            \caption{QPSK}
+            \label{fig:enter-label}
+        \end{figure}
+        \item 4 stavy
+        \item \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.5]{images/QPSKDIAG.png}
+            \caption{QPSK diagram prechodu}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{enumerate}
+    \clearpage
+    \item O-QPSK
+    \begin{itemize}
+        \item \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.5]{images/O-QPSK.png}
+            \caption{O-QPSK}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{itemize}
+    \item \textbf{$\pi/4 $DQPSK}
+    \begin{enumerate}
+        \item \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.5]{images/DQPSK.png}
+            \caption{DQPSK}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{enumerate}
+    \item \textbf{MQAM}
+    \begin{enumerate}
+        \item  M-stavový (Q) modulátor
+        \item \begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{images/MQAM.png}
+    \caption{MQAM}
+    \label{fig:enter-label}
+\end{figure}
+    \item  přesnosová rychlost $R=M*log_2Q$
+    \item mod. rychlost $M=\frac{1}{T_s}$
+     \item počet stavů $Q=2^{\frac{R}{M}}$
+     \item úrovně signálu $L_{I,Q}=\sqrt{Q}$\footnote{zaokrouhleno vždy nahoru}
+    \end{enumerate}
+    \item \textbf{Sample and Hold}
+    \begin{enumerate}
+        \item šířka impůzu je rovna vzorkovací periodě
+        \item Pokles amplitudy demodulovaného signálu $sinc(\pi\frac{F_{max}}{F_s})$
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.5]{images/SampleHold.png}
+            \caption{Caption}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{enumerate}
+    \item \textbf{PWM}
+    \begin{enumerate}
+        \item šířka impulsu se rovná aktuální hodnotě modulačního signálu
+        \item note: ty vzorce jsou takové mrdky že nevěřím že tam něco z toho dá
+        \item \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.5]{images/PWM.png}
+            \caption{Caption}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{enumerate}
+    \item \textbf{PPM}
+    \begin{enumerate}
+        \item Při modulaci PPM je okamžitá hodnota signálu vyjádřena časovou polohu impulzu v daném rámci, šířká odpovídá vzorkovací periodě $T_s$
+        \item \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.5]{images/PPM.png}
+            \caption{PPM}
+            \label{fig:enter-label}
+        \end{figure}
+    \end{enumerate}
+    \clearpage
+    \item \textbf{PCM}
+    \begin{enumerate}
+        \item \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.5]{images/pcmdiag.png}
+        \caption{PCM}
+        \label{fig:enter-label}
+        \end{figure}
+        \item kvantovací krok $\Delta=\frac{FS}{2^N}$
+        \item  FS= rozsah převodníku, N =počet bitů převodníku na vzorek
+        \item Dynamický rozsah  $=2^N-1\Tilde{=}2^N$
+        \item v DB $DR_{dB}=20log(\frac{FS}{\Delta})$
+        \item Střední výkon kvantovacího šumu $P_{sum}=\frac{\Delta^2}{12}$
+        \item Střední výkon harm. signálu $P_s=U^2_{ef}=\frac{A^2}{2}$
+        \item Odstup signal sum $SQNR=10log(\frac{P_s}{P_{sum}})dB$
+        \item Efektivní hodnota kvantovacího šumu $U_{ef_{sum}}=\sqrt{P_{sum}}$
+    \item \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.5]{images/pcm.png}
+        \caption{Signal v PCM modulatoru}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{enumerate}
+    \item \textbf{Delta modulator}
+    \begin{enumerate}
+        \item Aby nedošlo k přetížení, platí $A*\Omega<\Delta/T_s$
+        \item $A*2\pi F_{max}<\Delta*f_s$
+        \item $T_s=T_b$
+        \item $R=\frac{1}{T_b}$
+        \item Strmost=$A*\Omega$
+        \item $R=f_s$
+\begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.5]{images/delta.png}
+        \caption{Delta Modulator}
+        \label{fig:enter-label}
+    \end{figure}
+    \end{enumerate}
+    \item\textbf{DPCM}
+    \begin{enumerate}
+        \item maximalni diference $\Delta_{max}=2*s_{max}*(5*10^6)=2*\mathrm{VOLTY}sin(2\pi*F_{max}*5*T_s)$
+        \item$ T_s=1/f_s$
+    \end{enumerate}
+    \item \textbf{Raised-Cosine filter}
+    \item $M=\frac{R}{log_2Q}$
+    \item $R=Mlog_2Q$
+    \item $B=(1+\alpha)*\frac{M}{2}$
+    \item spektral uč. $\frac{R}{B}$
+    
 \end{enumerate}
