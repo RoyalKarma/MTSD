@@ -1,0 +1,387 @@
+\section{Otázky z testů 2023}
+\begin{enumerate}
+    \item \textbf{Jaká je přenosová rychlost 2B1Q linkvého kodu s periodou $T_s=250 \mu s$}
+    \begin{align*}
+     M=1/2 * R \\
+     M= 1/T_s \\
+    1/T_s=1/2 * R \\
+    R= 2/T_s \\
+    R= 2/250\mu s \\
+    R= 8kbit/s
+    \end{align*}
+    \item \textbf{Jaká je minimální potřebná šířka pasma pro kmitočtové klíčování 505 kHz a 495 kHz, pokud je přenosová rychlost 5 kbit/s}
+    \begin{align*}
+        f_0=505 kHz \\
+        f_1=495 kHz \\
+        B= f_0 - f_1 + M  \\
+        B= f_0 - f_1 + R  \\
+        B= 505-495+5 \\
+        B=15 kHz  
+    \end{align*}
+    Note: M=R - doba symbolu se rovná době prvku
+    
+    \item \textbf{Jaká je stejnosměrná složka bipolárního kodu RZ, s posloupností 110110 a výškou impulzú -+ 1V a doba symbolu je rovna polovině doby bitu}
+
+    
+    \begin{align*}
+        A_0 = D*\frac{p*\theta-n*\theta}{T} \\
+        A_0 = 1 *\frac{2*0.5-1*0.5}{3} \\
+        A_0 = \frac{1}{6}
+    \end{align*}
+
+    \item \textbf{Modulace PM s indexem fázové modulace rovným 1.2. Jak se změní fázový zdvih, pokud zvýšíme kmitočet modulačního signálu na dvojnásobek}
+
+    \begin{align*}
+        \beta= 1.2 \\
+        \varphi = \beta
+    \end{align*}
+    Odpověd: Nezmění se, fázový zdvih ($\varphi$) se rovná indexu fázové modulace $\beta$ a nezávisí na kmitočtu modulačního signálu.
+
+    \item \textbf{Jaká je šířka pásma, pokud je použito zapojení s Raised-cosine filtrem s indexem $\alpha=0.3$ a bitovou rychlostí 12kbit/s}
+    \begin{align*}
+        B = (1+ \alpha)*\frac{M}{2} \\
+        M= \frac{R}{log_2Q} \\
+        M= \frac{R}{log_22} \\
+        M=R \\
+        B = (1+ 0.3)*\frac{12}{2} \\
+        B= 7.8
+    \end{align*}
+    \item \textbf{Uvažujte šum s Gausovským rozložením a směrodatnou odchylkou 2V. Jaká je efektivní hodnota šumu ? }
+    \\
+    Odpověd: Efektivní hodnota odpovídá směrodatné odchylce, tedy
+    $$\sigma=2$$
+    \item  \textbf{Jaký druh modulátoru je na obrázku: MSK, FSK, ASK, QPSK}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics{images/QPSK.png}
+        \caption{Modulátor}
+        \label{fig:enter-label}
+    \end{figure}
+
+    Odpověd: QPSK
+
+    \item \textbf{Jak se u amplitudové modulace nazývá poměr amplitudovéího zdvyhu a aplitudy
+  nosného signalu?}
+    $$
+    m=\frac{\Delta S}{S_c}
+    $$
+    odpověd: Hloubka modulace
+
+
+    \item \textbf{4B3T - určit R z M}
+    \begin{align*}
+    M=\frac{3R}{4}\\
+    R=\frac{4M}{3}
+    \end{align*}
+   
+   
+    \textbf{\item O-QPSK}
+    \begin{figure} [h!]
+        \centering
+        \includegraphics{images/O-QPSK.png}
+        \caption{Caption}
+        \label{fig:enter-label}
+    \end{figure}
+    
+    \item \textbf{To stejné co otázka 3}
+
+    \item \textbf{Obdobně jako otázka 8 - vzorec na hloubku modulace - co je jmenovatel ?}
+     $$
+    m=\frac{\Delta S}{S_c}
+    $$
+
+    Odpověd: Amplituda nosného signálu
+
+    \item \textbf{Nějaký random odčítání z grafu}
+    \begin{verbatim}
+         S akou pravdepodobnostou bude hodnota vacsia ako 1? A bolo
+         tam rozdelenie pravdepodobnosti
+         a distibucna
+        funkcia, tak som to len odcital z grafu ze
+        1 bola na 0,7 takze odpoved bola 30% moznost.
+    \end{verbatim}
+
+    \item  \textbf{Obdobně jako příklad 5, ale vyjádřit $\alpha$}
+
+    \begin{align*}
+         B = (1+ \alpha)*\frac{M}{2} \\
+     \alpha = \frac{2B}{M}-1
+    \end{align*}
+
+    \item 
+    Netuším
+    \texttt{Dve otazky s frekvenciami ale neviem co presne, ako sa zmeni frekvencny zdvih, a druhe nieco ze zistit 
+    dve frekvencne pasma.}
+
+    \item \textbf{FFSK - zjistit přenosovou rychlost}
+    \begin{align*}
+        f_0=100.325 \\
+        f_1= 100.675 \\
+        \Delta f = R/4\\
+       \Delta f = (f1 - f0) / 2\\
+       (f1 - f0) / 2 = R/4\\
+        4(f1 - f0) / 2 = R\\
+        2(100.675-100.325)=R \\
+        R= 0.7Mbit/s
+    \end{align*}
+    
+
+    \item \textbf{Bipolární signál, D=+- 0.75, P(0)=P(1),  šum s výkonem 0.09W, určit $P_e$}
+
+    Rozhodovací úroveň je tedy optimální, můžu použít jednodušší vzorec
+    \begin{align*}
+        D_0=-0.75 \\
+        D_1=0.75 \\
+        P_s = 0.09 => \sigma=\sqrt{0.09}=0.3V \\
+        P_e = F_0(\frac{D_0-D_1}{2*\sigma}) \\
+        P_e= F_0(-2.5) \\
+        P_e= 6.21*10^{-3}
+    \end{align*}
+    
+    \item \textbf{Máme periodický unipolární signál 110110, 1 je vyjadřena pomocí D=-3V, urči stejnosměrnou sloužku.}
+
+    Pokud by byl RZ
+\begin{align*}
+     A_0 = D*\frac{\theta}{T} \\
+        A_0 = -3 *\frac{2*0.5-1*0.5}{6*0.5} \\
+        A_0 = -\frac{1}{2}V \\
+\end{align*}
+
+Pokud by byl NRZ
+\begin{align*}
+     A_0 = D*\frac{\theta}{T} \\
+        A_0 = -3 *\frac{2*0.5-1*0.5}{3*0.5} \\
+        A_0 = -1V \\
+\end{align*}
+\break
+
+\item \textbf{Hlas v pasmu 300 Hz az 3000 Hz v SSB, celková šířka pasma?}
+Dle tabulky pro SSB
+$$B=f_{max}$$
+
+Odpověď 3kHz
+
+\item \textbf{Signál DSB-SC je součást tzv. stereofonního multiplexního signálu. Horzní mezní kmitočet je 53kHz, dolní 23 kHz. Jaký je horní mezní kmitočet modulačního signálu?}
+\begin{align*}
+    F_{max}=B/2=\frac{53*10^{-3}-23*10^{-3}}{2} = 15kHz
+\end{align*}
+
+\item \textbf{Obrázek pi/4 QPSK}
+
+Note: předpokládám že myslel pi/4 DQPSK
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{images/pi.png}
+    \caption{pi/4 DQPSK}
+    \label{fig:enter-label}
+\end{figure}
+
+\item \textbf{Výpočet celkového výkonu, výpočet stejnosměrné složky, minimální šířka pasma}.
+
+ u AM
+
+\begin{align*}
+    P_{AM} = P_c + 2P_s \\
+    P_c = \frac{S_c^2}{2R}\\
+    P_s = \frac{m^2}{4}*\frac{S_c^2}{2R} \\
+    B_{min}=2*\Omega
+\end{align*}
+
+u FM 
+\begin{align*}
+    P_{FM}= \frac{S_c^2}{2R}
+\end{align*}
+šířka pásma dle Carsonových odhadů
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.76]{images/Carson.png}
+    \caption{Carsonovy odhady}
+    \label{fig:enter-label}
+\end{figure}
+\end{enumerate}
+\clearpage
+\section{Random otázky z fektušky}
+\begin{enumerate}
+    \item \textbf{XQAM modulace- výpočet modulační rychlosti}
+    
+    X vyjadřuje počet stavů tedy Q, platí
+    $$
+    M=\frac{R}{log_2Q}
+    $$
+    \item \textbf{Jak se změní výkon kmitočtové modulovaného signálu změnou amiplitudy nosné vlny}
+    
+    Platí $P_{FM}=\frac{S_c^2}{2R}$, tedy 2x větší $S_c$ = 4x větší $P_{FM}$ atp. 
+    \item \textbf{Které z těchto signálů nepatří mezi medolace s harmonickou vlnou}
+    \begin{enumerate}
+        \item AM
+        \item FM
+        \item PM
+        \item \textbf{PAM} = diskrétní
+        \item QAM
+        \item QPSK
+        \item \textbf{PPM} = diskrétní
+    \end{enumerate}
+    \item \textbf{Rozpoznat AMI, 4B3T kody}
+
+    Ami- 0 vyjádřena nulovou úrovní, 1 impulzem se střídající se +- polaritou
+    4B3T- 4 bitové posloupnosti, "3" urovně v posloupnosti.
+    \item  \textbf{Blok na vstupu přijámače, kompenzuje lineární zkreslení signálu}
+\begin{enumerate}
+    \item AA filitr
+    \item deskrambler
+    \item Diferenční koder
+    \item  \textbf{Ekvalizér}
+    \item Expandor
+    \item Integrátor
+    \item Kompresor
+    \item Raised cosine filtr
+    \item  Matched filtr
+\end{enumerate}
+    \item \textbf{Jak velkou bitovou rychlostí přenáší data signál GMSK, jestliže použitý Gaussovský tvarovací 
+    filtr má parametr BT = 0,4 a 3decibelová šířka pásma tohoto filtru je 100 kHz}
+    \begin{align*}
+        BT=0.4 \\
+        B= 100 kHz\\
+        T_b = ? \\
+        R= ? \\
+        T_b=\frac{BT}{B}=\frac{0.4}{100*10^3}=4*10^{-6}\\
+    R=\frac{1}{T_b}=250 kbit/s
+    \end{align*}
+    \item  \textbf{Periodicky se opakující posloupnost bitů …1001010010… je vysílána bipolárním impulzovým signálem s napěťovými úrovněmi ±5 V bez návratů k nulové úrovni (NRZ), přičemž bit 1 je reprezentován kladnou úrovní a bit 0 zápornou úrovní napětí. Jaká je velikost stejnosměrné složky tohoto vysílaného signálu?}
+    \begin{align*}
+         A_0 = D*\frac{p*\theta-n*\theta}{T} \\
+         A_0=5*\frac{2*1-3*1}{5} \\
+         A_0= -1V
+    \end{align*}
+    \item J\textbf{aká musí být minimální výška kvantovacího kroku modulace delta (DM), aby nedošlo ke 
+    zkreslení přenášeného signálu přetížením kodéru, jestliže chceme touto modulací přenášet 
+    signál s maximální strmostí 300 V/s přenosovým kanálem s přenosovou kapacitou 12 kbit/s?}
+
+????
+    \begin{align*}
+        \Delta=? \\
+        strmost = 300 V/s
+    \end{align*}
+    \item \textbf{Stejnosměrná složka ze spektra}
+    \begin{align*}
+        C_1=2*A_0*|sinc(\frac{\theta}{2}*k*\omega)| \\
+        C_1=4.8|sinc(\frac{\theta}{2}*\frac{2\pi}{4\theta})\\
+        C1=4.8|sinc(pi/4)\\
+        C_1=4.32
+    \end{align*}
+    \item \textbf{Stejnosměrná složka ze spektra pro periodický signál}
+    \begin{align*} 
+        C_1=2*A_0*|sinc(\frac{\theta}{2}*k*\omega)| \\
+        C_1=4|sinc(\frac{\theta}{2}*\frac{2\pi}{\frac{5\theta}{2}})\\
+        C1=4|sinc(pi/2.5)\\
+        C_1=3.03
+    \end{align*}
+    \item Jaký je horní mezní kmitočet modulačního signálu, jestliže spektrum výsledného amplitudového sinálu s oběma postraními pásmy - DSB- leží v pásmu od 89 do 98 kHz
+    \begin{align*}
+        f_h=\frac{B}{2}=\frac{98-89}{2}= 4,5 kHz
+    \end{align*}
+    \item Kolik kvantovacích úrovní má 10 bitový A-D převodník 
+    \begin{enumerate}
+        \item 2
+        \item 9
+        \item 10
+        \item 100
+        \item 256
+        \item \textbf{1024}
+    \end{enumerate}
+    $Q=2^N=1024$
+     \item \textbf{Jaká je modulační rychlost kmitočtově klíčovaného signálu s minimálním zdvihem (\textbf{MSK}), 
+    jehož signálové prvky mají kmitočty 55,02 kHz a 54,98 kHz?}
+    \begin{align*}
+    M=R\\
+    R=4\Delta f \\
+    M=4(54.98-55.02)= \textbf{80}
+    \end{align*}
+    \item  \textbf{K přenosu dat v přeloženém pásmu rychlostí 15 kBd je použito dvoustavové amplitudové 
+klíčování. Jaká je minimální šířka pásma přenosového kanálu?}
+
+    Pro dvoustavové amplitudové klíčování platí $B_{min}=M$, tedy B=\textbf{15kHz}
+    \item \textbf{
+    Jakou rychlostí přenáší data modulace MSK (Minimum-Shift Keying), jestliže kmitočet nosné 
+je 250 MHz a kmitočtový zdvih je 62,5 kHz}
+
+\begin{align*}
+    R=1/T \\
+    \Delta f= \frac{1}{4T}\\
+    T = \frac{1}{4f}=\frac{1}{4*625*10^3}=4*10^{-6} \\
+    R=1/T=1/4*10^{-6}=250kbit/s
+\end{align*}
+
+    \item Uvažujte fázovou modulaci s indexem$\beta$ = 1,2 rad. Jaký bude mít tato modulace index $\beta$, 
+jestliže se úhlový kmitočet harmonického modulačního signálu dvojnásobně zvýší?
+
+    $\beta = \Delta\phi$ - vlivem úhlového kmitočnu se nezmění,
+    
+    \item Kmitočtová modulace s indexem 6,5 má amplitudu nosné vlny 5 V a kmitočet nosné vlny 910 kHz. Harmonický modulační signál je $cos(8*10^3*\pi*t)$. Jaká je hodnota kmitočtové zdvihu
+    \begin{align*}
+        \beta=\frac{\Delta}{F} \\
+        F= 8*10^3/2 \textrm{ asi?}\\
+        \Delta=6.5*4*10^3= 26kHz
+    \end{align*}
+    \item \textbf{Kmitočtová modulace s indexem 2,5 má kmitočet nosné vlny 900 kHz, amplitudu nosné vlny 
+5 V a kmitočtový zdvih 55 kHz. Modulační signál je harmonický. Jaký je kmitočet modulačního 
+signálu?}   
+ \begin{align*}
+     \beta=2.5 \\
+     \Delta=55 \\
+     F=\Delta/\beta \\
+     F=55/2.5=22
+ \end{align*}
+ 
+    \item Jak se změní celková kmitočtová šířka pásma amplitudově modulovaného signálu s oběma 
+postranními pásmy (DSB), jestliže se maximální kmitočet modulačního signálu zdvojnásobí a 
+ostatní parametry modulace zůstanou stejné?
+
+    $B=2Fmax$ - zvětší se dvakrát
+    \item modulovaný signál je popsá. rovnicí
+     
+     \begin{align*}
+s(t\lbrack S_c+\Delta S*f(t)]*cos(\omega_ct+\varphi_c)
+     \end{align*} kde f(t) je 
+normovaný modulační signá.l O jaká druh modulace jde ?
+
+     \textbf{AM}
+    \item Klíčovaný signál je popsán rovnicí
+    $$s(t)=g(t)*S_c*cos(\omega_ct)$$, kde g(t) je obelníkový klíčovací signál o hodnotách +- 1. O jaký druh klíčování se jedná.
+
+    \textbf{BPSK}
+    \item Jak se nazývá funkční blok, používaný v kombinaci s rovnoměrným kvantizátorem například 
+při digitalizaci řečového signálu, jehož účelem je docílit konstantního poměru výkonu signálu 
+k výkonu kvantovacího šumu (SQNR) v celém rozsahu A/D převodníku?
+
+\textbf{Kompresor}
+
+    \item Jaký minimální kmitočtový zdvih musí mít modulace MSK (Minimum Shift Keying) pro přenos 
+dat rychlostí 9,6 kbit/s
+\begin{align*}
+    \Delta=? \\
+    \Delta=1/4T_b\\
+    R=1/T_b \\
+    \Delta=R/4=2.6kHz
+\end{align*}
+    \item Bipolárním signálem RZ o napěťových úrovních +5 V a –5 V je přenášena periodická datová 
+posloupnost …110110110… Doba trvání impulzu je poloviční oproti době trvání bitu, která je 
+Tb = 250 $\mu$s. Určete stejnosměrnou složku signálu a modulační rychlost
+\begin{align*}
+    A_0=5*\frac{2*\theta-\theta}{T}\\
+     A_0=\frac{5}{6}\\
+      A_0=0.833 \\
+      \\
+      M=1/\theta=\frac{1}{\theta}=1/125*10^-6\\
+      M=8kBd
+\end{align*}
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+    \item 
+
+\end{enumerate}
