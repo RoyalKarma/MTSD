@@ -43,7 +43,7 @@ jobs:
           # název zip souboru se specifickým jménem předmětu
           name: ${{ env.NAME }}
           # co se má uložit do zip souboru
-          path: main.pdf
+          path: ./main.pdf
 
   # vytvoření prázdného releasu
   release:
@@ -105,7 +105,7 @@ jobs:
       with:
         upload_url: ${{ needs.release.outputs.upload_url }}
         # cesta k souboru
-        asset_path: __dirname + /main.pdf
+        asset_path: ./main.pdf
         # název v releasu
         asset_name: ${{ env.NAME }}.pdf
         asset_content_type: application/pdf
